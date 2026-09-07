@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f6f3ee;
+  --foreground: #1c1916;
+  --card: #ffffff;
+  --card-foreground: #1c1916;
+  --popover: #ffffff;
+  --popover-foreground: #1c1916;
+  --primary: #1c1916;
+  --primary-foreground: #f7f4ef;
+  --secondary: #ebe6de;
+  --secondary-foreground: #1c1916;
+  --muted: #ebe6de;
+  --muted-foreground: #6f675e;
+  --accent: #7c6a4d;
+  --accent-foreground: #faf7f2;
+  --destructive: #8f2f2f;
+  --destructive-foreground: #fff7f7;
+  --border: #ddd6cb;
+  --input: #ddd6cb;
+  --ring: #7c6a4d;
+  --radius: 0.7rem;
+  --shadow: 0 18px 40px -28px rgba(28, 25, 22, 0.35);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 6px);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display), serif;
+  letter-spacing: -0.03em;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 28%, white);
+  color: var(--foreground);
+}
+
+.editorial-rule {
+  height: 1px;
+  background: var(--border);
+}
+
+.image-frame {
+  overflow: hidden;
+  background: #d8d1c6;
+}
+
+.image-frame img {
+  transition: transform 700ms ease;
+}
+
+.image-frame:hover img {
+  transform: scale(1.03);
+}

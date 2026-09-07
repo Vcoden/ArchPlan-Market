@@ -1,18 +1,19 @@
+function readEnv(name: string) {
+  return process.env[name]?.trim() || "";
+}
+
 export function isSupabaseConfigured() {
-  return Boolean(
-    process.env.NEXT_PUBLIC_SUPABASE_URL &&
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
-  );
+  return Boolean(readEnv("NEXT_PUBLIC_SUPABASE_URL") && readEnv("NEXT_PUBLIC_SUPABASE_ANON_KEY"));
 }
 
 export function getSupabaseUrl() {
-  return process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
+  return readEnv("NEXT_PUBLIC_SUPABASE_URL");
 }
 
 export function getSupabaseAnonKey() {
-  return process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "";
+  return readEnv("NEXT_PUBLIC_SUPABASE_ANON_KEY");
 }
 
 export function getServiceRoleKey() {
-  return process.env.SUPABASE_SERVICE_ROLE_KEY ?? "";
+  return readEnv("SUPABASE_SERVICE_ROLE_KEY");
 }
